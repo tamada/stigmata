@@ -3,8 +3,8 @@ package com.github.stigmata.birthmarks.smc;
 import com.github.stigmata.BirthmarkComparator;
 import com.github.stigmata.BirthmarkExtractor;
 import com.github.stigmata.BirthmarkPreprocessor;
+import com.github.stigmata.birthmarks.AbstractBirthmarkService;
 import com.github.stigmata.birthmarks.comparators.PlainBirthmarkComparator;
-import com.github.stigmata.spi.BirthmarkService;
 
 /**
  * 
@@ -12,13 +12,12 @@ import com.github.stigmata.spi.BirthmarkService;
  *
  * @author Haruaki TAMADA
  */
-public class SequentialMethodCallBirthmarkService implements BirthmarkService{
+public class SequentialMethodCallBirthmarkService extends AbstractBirthmarkService{
     private BirthmarkComparator comparator = new PlainBirthmarkComparator(this);
     private BirthmarkExtractor extractor = new SequentialMethodCallBirthmarkExtractor(this);
 
-    @Override
-    public String getType(){
-        return "smc";
+    public SequentialMethodCallBirthmarkService(){
+        super("smc");
     }
 
     @Override

@@ -3,7 +3,7 @@ package com.github.stigmata.birthmarks.wsp;
 import com.github.stigmata.BirthmarkComparator;
 import com.github.stigmata.BirthmarkExtractor;
 import com.github.stigmata.BirthmarkPreprocessor;
-import com.github.stigmata.spi.BirthmarkService;
+import com.github.stigmata.birthmarks.AbstractBirthmarkService;
 
 /**
  * Weighted Stack Pattern based birthmark.
@@ -22,13 +22,14 @@ import com.github.stigmata.spi.BirthmarkService;
  *
  * @author Haruaki Tamada
  */
-public class StackPatternBasedBirthmarkService implements BirthmarkService{
-    private BirthmarkPreprocessor preprocessor =
-        new OpcodeWeightCalculatePreprocessor(this);
-    private BirthmarkExtractor extractor =
-        new StackPatternBasedBirthmarkExtractor(this);
-    private BirthmarkComparator comparator =
-        new StackPatternBasedBirthmarkComparator(this);
+public class StackPatternBasedBirthmarkService extends AbstractBirthmarkService{
+    private BirthmarkPreprocessor preprocessor = new OpcodeWeightCalculatePreprocessor(this);
+    private BirthmarkExtractor extractor = new StackPatternBasedBirthmarkExtractor(this);
+    private BirthmarkComparator comparator = new StackPatternBasedBirthmarkComparator(this);
+
+    public StackPatternBasedBirthmarkService(){
+        super("wsp");
+    }
 
     @Override
     public String getDescription(){
@@ -42,11 +43,6 @@ public class StackPatternBasedBirthmarkService implements BirthmarkService{
 
     public boolean isExperimental(){
         return false;
-    }
-
-    @Override
-    public String getType(){
-        return "wsp";
     }
 
     @Override

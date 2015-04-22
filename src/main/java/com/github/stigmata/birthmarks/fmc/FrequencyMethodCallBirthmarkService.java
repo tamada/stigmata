@@ -3,8 +3,8 @@ package com.github.stigmata.birthmarks.fmc;
 import com.github.stigmata.BirthmarkComparator;
 import com.github.stigmata.BirthmarkExtractor;
 import com.github.stigmata.BirthmarkPreprocessor;
+import com.github.stigmata.birthmarks.AbstractBirthmarkService;
 import com.github.stigmata.birthmarks.comparators.CosineSimilarityBirthmarkComparator;
-import com.github.stigmata.spi.BirthmarkService;
 
 /**
  * 
@@ -12,13 +12,12 @@ import com.github.stigmata.spi.BirthmarkService;
  * 
  * @author Haruaki TAMADA
  */
-public class FrequencyMethodCallBirthmarkService implements BirthmarkService{
+public class FrequencyMethodCallBirthmarkService extends AbstractBirthmarkService{
     private BirthmarkComparator comparator = new CosineSimilarityBirthmarkComparator(this);
     private BirthmarkExtractor extractor = new FrequencyMethodCallBirthmarkExtractor(this);
 
-    @Override
-    public String getType(){
-        return "fmc";
+    public FrequencyMethodCallBirthmarkService(){
+        super("fmc");
     }
 
     @Override

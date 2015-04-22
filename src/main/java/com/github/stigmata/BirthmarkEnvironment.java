@@ -225,7 +225,12 @@ public class BirthmarkEnvironment{
      * return birthmark service registered with given birthmark type.
      */
     public BirthmarkService getService(String type){
-        BirthmarkService service = services.get(type);
+        BirthmarkService service = null;
+        for(BirthmarkService bs: services.values()){
+            if(bs.isType(type)){
+                service = bs;
+            }
+        }
         if(service == null && parent != null){
             service = parent.getService(type);
         }
