@@ -3,8 +3,8 @@ package com.github.stigmata.birthmarks.fuc;
 import com.github.stigmata.BirthmarkComparator;
 import com.github.stigmata.BirthmarkExtractor;
 import com.github.stigmata.BirthmarkPreprocessor;
+import com.github.stigmata.birthmarks.AbstractBirthmarkService;
 import com.github.stigmata.birthmarks.comparators.CosineSimilarityBirthmarkComparator;
-import com.github.stigmata.spi.BirthmarkService;
 
 /**
  * 
@@ -12,13 +12,12 @@ import com.github.stigmata.spi.BirthmarkService;
  *
  * @author Haruaki TAMADA
  */
-public class FrequencyUsedClassesBirthmarkService implements BirthmarkService{
+public class FrequencyUsedClassesBirthmarkService extends AbstractBirthmarkService{
     private BirthmarkComparator comparator = new CosineSimilarityBirthmarkComparator(this);
     private BirthmarkExtractor extractor = new FrequencyUsedClassesBirthmarkExtractor(this);
 
-    @Override
-    public String getType(){
-        return "fuc";
+    public FrequencyUsedClassesBirthmarkService(){
+        super("fuc");
     }
 
     @Override

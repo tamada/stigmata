@@ -3,8 +3,8 @@ package com.github.stigmata.birthmarks.uc;
 import com.github.stigmata.BirthmarkComparator;
 import com.github.stigmata.BirthmarkExtractor;
 import com.github.stigmata.BirthmarkPreprocessor;
+import com.github.stigmata.birthmarks.AbstractBirthmarkService;
 import com.github.stigmata.birthmarks.comparators.LogicalAndBirthmarkComparator;
-import com.github.stigmata.spi.BirthmarkService;
 
 /**
  * 
@@ -12,13 +12,12 @@ import com.github.stigmata.spi.BirthmarkService;
  *
  * @author Haruaki TAMADA
  */
-public class UsedClassesBirthmarkService implements BirthmarkService{
+public class UsedClassesBirthmarkService extends AbstractBirthmarkService{
     private BirthmarkComparator comparator = new LogicalAndBirthmarkComparator(this);
     private BirthmarkExtractor extractor = new UsedClassesBirthmarkExtractor(this);
 
-    @Override
-    public String getType(){
-        return "uc";
+    public UsedClassesBirthmarkService(){
+        super("uc");
     }
 
     @Override

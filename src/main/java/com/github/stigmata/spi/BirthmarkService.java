@@ -13,30 +13,37 @@ public interface BirthmarkService{
     /**
      * returns a type of the birthmark this service provides.
      */
-    public String getType();
+    String getType();
+
+    /**
+     * returns that given type string is compatible this birthmark type.
+     * @param givenType
+     * @return
+     */
+    boolean isType(String givenType);
 
     /**
      * returns a description of the birthmark this service provides.
      */
-    public String getDescription();
+    String getDescription();
 
     /**
      * returns a preprocessor for the birthmark of this service.
      */
-    public BirthmarkPreprocessor getPreprocessor();
+    BirthmarkPreprocessor getPreprocessor();
 
     /**
      * returns a extractor for the birthmark of this service.
      */
-    public BirthmarkExtractor getExtractor();
+    BirthmarkExtractor getExtractor();
 
     /**
      * returns a comparator for the birthmark of this service.
      */
-    public BirthmarkComparator getComparator();
+    BirthmarkComparator getComparator();
 
-    public boolean isExperimental();
+    boolean isExperimental();
 
-    public boolean isUserDefined();
+    boolean isUserDefined();
 }
 

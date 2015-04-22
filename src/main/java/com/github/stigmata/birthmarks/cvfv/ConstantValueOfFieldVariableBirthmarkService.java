@@ -3,8 +3,8 @@ package com.github.stigmata.birthmarks.cvfv;
 import com.github.stigmata.BirthmarkComparator;
 import com.github.stigmata.BirthmarkExtractor;
 import com.github.stigmata.BirthmarkPreprocessor;
+import com.github.stigmata.birthmarks.AbstractBirthmarkService;
 import com.github.stigmata.birthmarks.comparators.PlainBirthmarkComparator;
-import com.github.stigmata.spi.BirthmarkService;
 
 /**
  * 
@@ -12,13 +12,12 @@ import com.github.stigmata.spi.BirthmarkService;
  *
  * @author Haruaki TAMADA
  */
-public class ConstantValueOfFieldVariableBirthmarkService implements BirthmarkService{
+public class ConstantValueOfFieldVariableBirthmarkService extends AbstractBirthmarkService{
 	private BirthmarkComparator comparator = new PlainBirthmarkComparator(this);
     private BirthmarkExtractor extractor = new ConstantValueOfFieldVariableBirthmarkExtractor(this);
 
-    @Override
-    public String getType(){
-        return "cvfv";
+    public ConstantValueOfFieldVariableBirthmarkService(){
+        super("cvfv");
     }
 
     @Override
