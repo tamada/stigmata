@@ -65,9 +65,9 @@ public class OpcodeExtractionMethodVisitor extends MethodVisitor{
 
     @Override
     public void visitMethodInsn(int opcode, String owner,
-				String name, String desc){
+                                String name, String desc, boolean itf){
         opcodes.add(opcode);
-        super.visitMethodInsn(opcode, owner, name, desc, opcode == Opcodes.INVOKEINTERFACE);
+        super.visitMethodInsn(opcode, owner, name, desc, itf);
     }
 
     @Override
