@@ -121,7 +121,7 @@ public class OpcodeExtractMethodVisitor extends MethodVisitor{
     }
 
     @Override
-    public void visitMethodInsn(int opcode, String owner, String name, String desc){
+    public void visitMethodInsn(int opcode, String owner, String name, String desc, boolean itf){
         Opcode methodOpcode = new Opcode(manager.getOpcode(opcode));
         Type[] types = Type.getArgumentTypes(desc);
         int argumentSize = 0;
@@ -142,7 +142,7 @@ public class OpcodeExtractMethodVisitor extends MethodVisitor{
         methodOpcode.setAct(size);
 
         opcodes.add(methodOpcode);
-        super.visitMethodInsn(opcode, owner, name, desc, opcode == Opcodes.INVOKEINTERFACE);
+        super.visitMethodInsn(opcode, owner, name, desc, itf);
     }
 
     @Override
