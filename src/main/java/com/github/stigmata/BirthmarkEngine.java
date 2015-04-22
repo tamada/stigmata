@@ -417,7 +417,9 @@ public class BirthmarkEngine{
             String key = i.next();
             String fullyKey = typeKey + "." + accessor.getType() + "." + key; 
             Object value = context.getEnvironment().getProperty(fullyKey);
-            accessor.setProperty(key, value);
+            if(value != null){
+                accessor.setProperty(key, value);
+            }
         }
     }
 

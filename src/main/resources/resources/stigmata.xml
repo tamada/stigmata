@@ -114,14 +114,6 @@
   <!-- Properties for birthmark context -->
   <properties>
     <property>
-      <name>extractor.kgram.KValue</name>
-      <value>4</value>
-    </property>
-    <property>
-      <name>extractor.kmc.KValue</name>
-      <value>4</value>
-    </property>
-    <property>
       <name>birthmark.store.target</name>
       <value>MEMORY</value>
     </property>
