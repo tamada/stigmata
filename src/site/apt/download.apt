@@ -1,0 +1,143 @@
+ ----
+ Download
+ ----
+ Haruaki Tamada
+ ----
+ 2008-12-10
+ ----
+
+Download
+
+*License
+
+ Stigmata: Java birthmark toolkit
+
+ Apache License 2.0
+
+ Copyright (C) 2006-2007  Haruaki TAMADA, Ph.D.
+
+ Licensed under the Apache License, Version 2.0 (the "License"); you
+may not use this file except in compliance with the License. You may
+obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+implied. See the License for the specific language governing
+permissions and limitations under the License.
+
+*Requirements
+
+ *Java SE 6 as runtime environment
+
+ *{{{http://asm.objectweb.org/}ASM}} 3.1
+
+ *{{{http://commons.apache.org/cli/}Jakarta Commons CLI}} 1.0
+
+ *{{{http://commons.apache.org/dbutils/}Jakarta Commons DbUtils}} 1.1
+
+ *{{{http://commons.apache.org/beanutils/}Jakarta Commons BeanUtils}} 1.7.0
+
+ *{{{http://talisman.sourceforge.jp/xmlcli/}XmlCli}} 1.2.2
+
+ *{{{http://talisman.sourceforge.jp/mds/}MDS}} 1.0.0
+
+ *{{{http://talisman.sourceforge.jp/mds/}Talisman i18n}} 1.0.1
+
+ *{{{http://stigmata.sourceforge.jp/digger/}Digger}} 1.1.0
+
+ *{{{http://www.junit.org/}JUnit}} 4.3
+
+ []
+
+*Manually download
+
+ We can download release build from {{{http://sourceforge.jp/}sourceforge.jp}}. 
+
+ {{{https://sourceforge.jp/projects/stigmata/files/}Download}}
+
+ We can see stigmata-x.x.x-bin.jar, stigmata-x.x.x-src.jar, and
+ stigmata-x.x.x-exe.jar.  Each packages mean as followings.
+
+ [stigmata-x.x.x-bin.jar] binary distribution package, contains class
+   files and resource files.
+
+ [stigmata-x.x.x-src.jar] source distribution package, contains
+ pom.xml, source files, resource files and documents.
+ 
+ [stigmata-x.x.x-exe.jar] Executable distribution package, contains
+ Windows executable file named stigmata.exe.
+
+*Binary download by maven2 
+
+ We can get a jar file of stigmata by Maven2 using below setting.
+First, add remote repository entry to repositories tag in `pom.xml.'
+Next, add dependency tag entry to dependencies tag in `pom.xml.'
+
+----
+<project>
+    :
+  <repositories>
+    <repository>
+      <id>stigmata.sourceforge.jp</id>
+      <name>Stigmata Maven2 Repository in sourceforge.jp</name>
+      <url>http://stigmata.sourceforge.jp/maven2</url>
+    </repository>
+  </repositories>
+    :
+
+    :
+  <dependencies>
+      :
+    <dependency>
+      <groupId>jp.sourceforge</groupId>
+      <artifactId>stigmata</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+      :
+  </dependencies>
+    :
+</project>
+----
+
+*SCM
+
+**Git
+
+ This project has three repositories: stigmata, stigmata-plugins, and digger.
+
+ * stigmata: the main repository of stigmata.
+
+ * stigmata-plugins: the repository for stigmata plugins.
+
+ * digger: the library for loading classes which is used in stigmata.
+
+ []
+
+----
+$ git clone git://git.sourceforge.jp:/gitroot/stigmata/REPOSITORY_NAME
+----
+
+ REPOSITORY_NAME is replaced as the one of stigmata, stigmata-plugins and digger.
+
+**Subversion 
+
+ This scm is obsolete.
+
+ The source can be checked out anonymously from Subversion.
+
+----
+$ svn checkout http://svn.sourceforge.jp/svnroot/stigmata/trunk/ stigmata
+----
+
+**Web access
+
+ We can browse the source code from following link.
+
+ * stigmata: {{http://git.sourceforge.jp/view?p=stigmata/stigmata.git}}
+
+ * stigmata-plugins: {{http://git.sourceforge.jp/view?p=stigmata/stigmata-plugins.git}}
+
+ * digger: {{http://git.sourceforge.jp/view?p=stigmata/digger.git}}

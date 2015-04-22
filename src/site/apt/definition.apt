@@ -1,0 +1,69 @@
+ ----
+ Definitions
+ ----
+ Haruaki Tamada
+ ----
+ 2007-06-11
+ ----
+
+Birthmark
+
+ A birthmark is unique and native characteristics of a program.  For
+pair of programs <p> and <q>, if <q> has the same birthmark as <p>'s,
+<q> is suspected as a <<copy>> of <p>.  Ideally, the birthmarks should
+satisfy the following properties: 
+
+ [[1]] <<preservation>>: the birthmarks should be preserved even
+if the original class file is tampered with, and
+
+ [[2]] <<distinction>>: independent class files must be
+distinguished by completely different birthmarks.
+
+*Definition of Birthmark
+
+ Let <p>, <q> be programs and <f(p)> be a set of characteristics
+extracted from <p> by a certain method <f>. Then <f(p)> is called a
+<birthmark> of <p> iff both of the following conditions are satisfied.
+
+ [[1]]<f(p)> is obtained from <p> itself without any extra information.
+
+ [[2]]If <q> is copied from <p>, then <f(p)=f(q)>
+
+ []
+
+ First condition means that the birthmark is not extra information and
+is required for <p> to run.  Hence, extracting a birthmark does not
+require extra code as watermarking does.  Second condition states that
+the same birthmark has to be obtained from copied programs.  By
+contraposition, if birthmarks <f(p)> and <f(q)> are different, then
+<p> is different from <q> holds. That is, we can guarantee that <q> is
+not a copy of <p>.
+
+ Hopefully, a birthmark will satisfy the following properties.
+
+ [Property 1: Preservation] For <p'> obtained from <p> by any
+program transformation, <f(p) = f(p')> holds.
+
+ [Property 2: Distinction] For <p> and <q> such that same
+specification, if <p> and <q> are written independently, then
+<f(p)!=f(q)>.
+
+ []
+
+ These properties strengthen Condition 2 of birthmark definition.
+First property specifies <preservation property> of the birthmark
+against program transformation.  Preservation property specifies that
+the same birthmark must be obtained from <p> and converted to <p'>.
+However, there exist many ways to transform a program into an
+equivalent one. Hence, in reality, it is difficult to extract strong
+enough birthmarks to perfectly satisfy preservation property.
+
+ Second property specifies the <distinction property> of the
+birthmark, stating that: even though the specification of <p> and <q>
+is the same, if implemented separately, different birthmarks should be
+extracted.  In general, the detail of two independent programs is
+almost never completely the same.  However, in the case that <p> and
+<q> are both <tiny> programs, extracted birthmarks could become the
+same, even if <p> and <q> are written independently.  Those properties
+should be tuned within an allowable range at the user's discretion.
+

@@ -1,0 +1,78 @@
+ ----
+ FAQ
+ ----
+ Haruaki Tamada
+ ----
+ 2007-06-11
+ ----
+
+{FAQ}
+
+ *{{{#What is Stigmata}What is Stigmata}}
+
+ *{{{#What is birthmark}What is birthmark}}
+
+ *{{{#Why did We name the tool Stigmata}Why did We name the tool Stigmata}}
+
+ *{{{#What kind of features does Stigmata have}What kind of features does Stigmata have}}
+
+ *{{{#What is the limitation of extracting birthmarks}What is the limitation of extracting birthmarks}}
+
+*{What is Stigmata}
+
+ Stigmata is a toolkit for birthmarking Java class files.  Extracting
+birthmarks from Java class files directly and comparing them.  And
+analyzing birthmarks in multi-dimensional scaling.
+
+*{What is birthmark}
+
+ A birthmark is a unique and native characteristics of a program.  The
+birthmark provides a way to detect stolen software without embedding
+any additional information before distribution.
+
+ For more details, see {{{definition.html}Definitions}}.
+
+*{Why did We name the tool Stigmata}
+
+ Birthmark is marks that appear on a person's body in the same places
+ as those made on Jesus Christ's body when he was nailed to a cross.
+
+ {{http://dictionary.cambridge.org/define.asp?key=78150&dict=CALD}}
+
+ We liken birthmarks to holy sign of programs.
+
+*{What kind of features does Stigmata have}
+
+ Stigmata have general mode and expert mode.  In general mode, we can
+extract certain birthmarks from jar file directly, and compare
+extracted birthmarks. Additionally, analyzing extracted birthmarks
+with MDS (multi-dimensional scaling).
+
+ In expert mode, it added to general mode, we can define the new
+birthmark, and a new filter (filtering the result of comparing).
+
+ Moreover, a part of extracting/comparing birthmarks is provided as
+plug-ins, you can define original birthmark plug-in and easily install
+it to Stigmata.
+
+*{What is the limitation of extracting birthmarks}
+
+ Stigmata loads a target class by StigmataClassLoader when
+birthmarks were extracted from the class.  Therefore, extracting
+birthmarks from sealed classes will be failed.
+
+ For example, let <S> be a set of classes included in sealed jar file
+<SomeArchive-X.X.jar>, then, <<<SecurityException>>> will be thrown
+when extracting birthmarks from other version sealed jar file
+(SomeArchive-X.Y.jar).
+
+ This limitation is occured only when extracting IS birthmark.  IS
+birthmark is inheritance structure birthmark, and to extract it to
+find super class from loaded classes pool.  So, difference version
+cannot be applied.
+
+**References
+
+ *{{{http://java.sun.com/docs/books/tutorial/deployment/jar/}Lesson: Packaging Programs in JAR Files}}
+
+ []

@@ -1,0 +1,125 @@
+ ----
+ DTD
+ ----
+ Haruaki Tamada
+ ----
+ 2006-12-12
+ ----
+
+Overview
+
+ Stigmata supports two types of xml file. One is
+ {{{#Stigmata setting xml}configuration settings}} of Stigmata. Another is
+ {{{#Birthmarking result xml}result of birthmarking}}.
+
+{Stigmata setting xml}
+
+ This dtd is defined for configuration settings of Stigmata.  A xml
+file formatted in this dtd can be specified <<<--config-file>>> option
+of Stigmata.
+
+*DTD
+
+----
+<?xml version="1.0" encoding="euc-jp"?>
+
+<!--
+ $Id: stigmata-4.0.dtd 225 2007-10-02 06:22:42Z tama3 $
+-->
+
+<!ELEMENT classpath               (#PCDATA)>
+
+<!ELEMENT type                    (#PCDATA)>
+<!ELEMENT display-name            (#PCDATA)>
+<!ELEMENT description             (#PCDATA)>
+<!ELEMENT extractor               (#PCDATA)>
+<!ELEMENT comparator              (#PCDATA)>
+
+<!ELEMENT suffix                  (#PCDATA)>
+<!ELEMENT prefix                  (#PCDATA)>
+<!ELEMENT match                   (#PCDATA)>
+
+<!ELEMENT name                    (#PCDATA)>
+<!ELEMENT value                   (#PCDATA)>
+
+<!ELEMENT criterion               (#PCDATA)>
+<!ELEMENT filter-type             (#PCDATA)>
+
+<!ELEMENT package                 (suffix|prefix|match|not-match)>
+<!ELEMENT class-name              (suffix|prefix|match|not-match)>
+<!ELEMENT fully-name              (suffix|prefix|match|not-match)>
+
+<!ELEMENT exclude                 (package|class-name|fully-name)>
+<!ELEMENT wellknown-classes       ((exclude|package|class-name|fully-name)*)>
+
+<!ELEMENT property                (name,value)>
+<!ELEMENT properties              (property*)>
+
+<!ELEMENT birthmark-service       (type,display-name,description?,extractor,comparator)>
+<!ELEMENT birthmark-services      (birthmark-service*)>
+
+<!ELEMENT classpath-list          (classpath*)>
+
+<!ELEMENT attribute               (name,value)>
+<!ELEMENT attributes              (attribute*)>
+<!ELEMENT filter                  (filter-type,criterion,attributes)>
+<!ELEMENT filter-list             (filter*)>
+<!ELEMENT filterset               (name,match,filter-list)>
+<!ELEMENT filterset-list          (filterset*)>
+
+<!ELEMENT stigmata (birthmark-services,wellknown-classes?,classpath-list?,properties?,filterset-list?) >
+
+----
+
+{Birthmarking result xml}
+
+ This dtd is defined for a result of Stigmata. The result of Stigmata
+is birthmark service list, list of extracted birthmarks, and
+similarities between all combinations of class files.  Those
+information is shown as xml file formatted in this DTD.
+
+*DTD
+
+----
+<!--
+  $Id: birthmark-1.0.dtd 245 2007-10-10 01:14:56Z tama3 $
+-->
+
+<!ATTLIST birthmark
+  type  NAME  #REQUIRED
+  count CDATA #REQUIRED
+>
+
+<!ATTLIST birthmark-similarity
+  type             NAME  #REQUIRED
+  comparison-count CDATA #REQUIRED
+>
+
+<!ELEMENT type                   (#PCDATA)>
+<!ELEMENT unit                   (#PCDATA)>
+<!ELEMENT birthmark-type         (#PCDATA)>
+<!ELEMENT display-type           (#PCDATA)>
+<!ELEMENT description            (#PCDATA)>
+<!ELEMENT name                   (#PCDATA)>
+<!ELEMENT location               (#PCDATA)>
+<!ELEMENT element                (#PCDATA)>
+<!ELEMENT birthmark-similarity   (#PCDATA)>
+<!ELEMENT similarity             (#PCDATA)>
+
+<!ELEMENT birthmark-service      (type,display-type,description?,class-name)>
+<!ELEMENT birthmark-services     (birthmark-service*)>
+
+<!ELEMENT birthmark              (element*)>
+<!ELEMENT extracted-birthmark    (name,location,birthmark)>
+<!ELEMENT birthmark-types        (birthmark-type+)>
+<!ELEMENT extracted-birthmarks   (unit,birthmark-types,extracted-birthmark*)>
+
+<!ELEMENT target1                (name,location)>
+<!ELEMENT target2                (name,location)>
+<!ELEMENT birthmark-similarities (birthmark-similarity*)>
+<!ELEMENT comparison-result      (target1,target2,birthmark-similarities,similarity)>
+<!ELEMENT comparison-result-set  (comparison-result*)>
+
+<!ELEMENT birthmark-result-set   ((birthmark-services|extracted-birthmarks|comparison-result-set)+)>
+
+----

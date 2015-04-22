@@ -1,0 +1,111 @@
+ ----
+ Implementation
+ ----
+ Haruaki Tamada
+ ----
+ 2008-09-11
+ ----
+
+Implemented Birthmarks
+
+*CVFV birthmark
+
+ [Proposers] H. Tamada, et al.
+
+ [Description] Constant values of field variables and its field type
+
+ [Paper] Haruaki Tamada, Masahide Nakamura, Akito Monden, and Ken-ichi
+ Matsumoto, "Java Birthmarks --Detecting the Software Theft--," IEICE
+ Transactions on Information and Systems, Vol. E88-D, No. 9, September
+ 2005.
+
+*SMC birthmark
+
+ [Proposers] H. Tamada, et al.
+
+ [Description] Sequence of method calls in definition order (not execution order).
+
+ [Paper] Haruaki Tamada, Masahide Nakamura, Akito Monden, and Ken-ichi
+ Matsumoto, "Java Birthmarks --Detecting the Software Theft--," IEICE
+ Transactions on Information and Systems, Vol. E88-D, No. 9, September
+ 2005.
+
+*IS birthmark
+
+ [Proposers] H. Tamada, et al.
+
+ [Description] Inheritance structure of target class.  If a class in
+ this birthmark elements is not wellknown-class, replace it to <null>.
+
+ [Paper] Haruaki Tamada, Masahide Nakamura, Akito Monden, and Ken-ichi
+ Matsumoto, "Java Birthmarks --Detecting the Software Theft--," IEICE
+ Transactions on Information and Systems, Vol. E88-D, No. 9, September
+ 2005.
+
+*UC birthmark
+
+ [Proposers] H. Tamada, et al.
+
+ [Description] A set of used classes.  Elements of this birthmark is
+ appeared in field type, method argument types, return type and used
+ in methods.
+
+ [Paper] Haruaki Tamada, Masahide Nakamura, Akito Monden, and Ken-ichi
+ Matsumoto, "Java Birthmarks --Detecting the Software Theft--," IEICE
+ Transactions on Information and Systems, Vol. E88-D, No. 9, September
+ 2005.
+
+*k-gram based birthmark
+
+ [Proposers] G. Myles and C. Collberg
+
+ [Description] Construct k-gram from instructions.
+
+ [Paper] Ginger Myles, Christian Collberg, ``K-gram based software
+ birthmarks,'' In Proc. of the 2005 ACM symposium on Applied
+ computing, 2005.
+
+*FMC birthmark
+
+ [Proposers] H. Tamada
+
+ [Description] Frequency of method calls.
+
+ [Papers] Not published
+
+ [Related Papers] Haruaki Tamada, Keiji Okamoto, Masahide Nakamura,
+   Akito Monden, and Ken-ichi Matsumoto, ``Dynamic Software Birthmarks
+   to Detect the Theft of Windows Applications,'' In
+   Proc. International Symposium on Future Software Technology 2004
+   (ISFST 2004), CD-ROM, Xi'an, China, 20-22 October 2004.
+
+*FUC birthmark
+
+ [Proposers] H. Tamada
+
+ [Description] Frequency of used classes.
+
+ [Papers] Not published
+
+ [Related Papers] Haruaki Tamada, Keiji Okamoto, Masahide Nakamura,
+   Akito Monden, and Ken-ichi Matsumoto, ``Dynamic Software Birthmarks
+   to Detect the Theft of Windows Applications,'' In
+   Proc. International Symposium on Future Software Technology 2004
+   (ISFST 2004), CD-ROM, Xi'an, China, 20-22 October 2004.
+
+Analysis method
+
+*MDS (Multi-dimensional scaling)
+
+ [Proposer?] T. Kakimoto, et al.
+
+ [Description] plotting classes into plane based on their similarities
+ between each pairs.
+
+ [Paper] Takeshi Kakimoto, Akito Monden, Yasutaka Kamei, Haruaki
+   Tamada, Masateru Tsunoda, and Ken-ichi Matsumoto, ``Using Software
+   Birthmarks to Identify Similar Classes and Major Functionalities,''
+   In Proc. the 3rd International Workshop on Mining Software
+   Repositories ({{{http://msr.uwaterloo.ca/msr2006/}MSR Mining
+   Challenge 2006}}), pp.171--172, Shanghai, China, May 2006.
+

@@ -1,0 +1,91 @@
+ ----
+ Experimental mode
+ ----
+ Haruaki Tamada
+ ----
+ 2007-06-29
+ ----
+
+Overview
+
+ Stigmata supports general mode and experimental mode.  We think that
+extracting/comparing/analyzing are usually useful in general mode.
+However, general mode do not supports tiny changes, for example, we
+want to change comparison method, but do not change extracting method.
+Experimental mode supports above requests unless programming, new
+definition of birthmarks and new definition fo filters which are
+filtering comparison result set and viewing extracted birthmarks.
+
+Comparison Methods
+
+ Let <p> and <q> be a target class files, and <f> be a birthmark
+extraction method.  Then, <f(p)> and <f(q)> be a extracted birthmarks
+which elements are <(e^p_1, e^p_2, ..., e^p_n)> and <(e^q_1, e^q_2,
+..., e^q_m)>.
+
+*Plain
+
+ Let <L> be a number of matched elements of two birthmarks and same
+index.  Then, the similarity of this method is calculated by
+
+ <L> / <(n + m)>
+
+*Logical AND
+
+ |<f(p) cap f(q)>| / |<f(p)>| |<f(q)>|
+
+*DP matching
+
+ DP matching method
+
+*Edit distance
+
+ Edit distance.
+
+*Cosine similarity
+
+ Using this comparison method, birthmarks must have name and its
+frequency.  Therefore, elements of <f(p)> be a set of <(\{name_1,
+freq_1\}, \{name_2, freq_2\}, ..., \{name_n, freq_n\})>.
+
+ Next, if <f(p)> have name <FOO> and <f(q)> do not have <FOO>, we add
+element <\{FOO, 0\}> to f(q).  Both birthmarks makes to appearing all
+names.
+
+ Then, the similarity of <f(p)> and <f(q)>is denoted by
+
+ <norm1 = sqrt(freq^p_1 * freq^p_1 + freq^p_2 * freq^p_2 + ... + freq^p_n * freq^p_n)>
+
+ <norm2 = sqrt(freq^q_1 * freq^q_1 + freq^q_2 * freq^q_2 + ... + freq^q_n * freq^q_n)>
+
+ <product = freq^p_1 * freq^q_1 + freq^p_2 * freq^q_2 + ... + freq^p_n * freq^q_n>
+
+ <similarity = product / (norm1 * norm2)>
+
+Birthmark Store Target
+
+ Stigmata stores extracted birthmarks to various location.  Latest
+version of Stigmata supports memory, xml files, and some database
+system for storing extracted birthmarks.  Extracted birthmarks are
+recorded to each location excludes memory mode.
+
+ Features of each store targets are described as follows.  Since each
+target has some advantages and disadvantages, you can switch between
+targets as necessary.
+
+ [MEMORY] This target stores extracted birthmarks to the runtime
+ memory.  Threfore, no delay for traversing extracted birthmarks, but
+ too large jar files causes <<<OutOfMemoryError>>>.
+
+ [XMLFILE] This target stores extracted birthmarks to xml files.
+ Using this target, memory is occupied no large part, because
+ extracted birthmarks are created on demand.  However, weak point of
+ this target is speed of traversing extracted birthmarks which depends
+ file I/O.
+
+ [DATABASE] This target stores extracted birthmarks to specified
+ database system.  Using this target, memory is not occupied, and
+ traversing extracted birthmarks are not slow.  However, the cost of
+ preparing database system and connecting stigmata and database
+ system is very high.
+

@@ -1,0 +1,97 @@
+ ----
+ Tutorial
+ ----
+ Haruaki Tamada
+ ----
+ 2007-06-11
+ ----
+
+{Tutorial}
+
+ *{{{#Maven2}Maven2}}
+
+ *{{{#Download and Install}Download and Install}}
+
+ *{{{#Install}Install}}
+
+ *{{{#Launch}Launch}}
+
+ *{{{#Extract}Extract}}
+
+ *{{{#Compare}Compare}}
+
+ *{{{#Analysis}Analysis}}
+
+*{{Maven2}}
+
+ First, compilation environment of stigmata is adopted
+{{{http://maven.apache.org/}Maven2}}.  If you want to compile this
+product, you must install Maven2 into your machine.
+
+ For more details, see
+{{{http://maven.apache.org/download.html#installation}Installation
+instruction of Maven2}}
+
+*{{Download and Install}}
+
+ You can download stigmata from
+{{{https://sourceforge.jp/projects/stigmata/files/}sourceforge.jp}}.
+Click the name of stigmata latest version of binary archive.
+
+ Next, extract downloaded archive, and obtain stigmata-x.x.x directory.
+Installation is finished.
+
+*{{Launch stigmata}}
+
+ Double clicked stigmata-x.x.x.jar, then launch stigmata.
+
+[images/launch.png] download page
+
+*{{Extract}}
+
+ First, you choose target jar file(s) for extracting birthmarks.
+Next, you must select birthmark types, and push down <extract> button.
+Then you can see the extraction result of selected birthmarks from
+specified files in the new tab pane.
+
+[images/extraction.png] Birthmark extraction procedure
+
+[images/extractionresult.png] The result of extraction
+
+*{{Compare}}
+
+ First, you choose target files for comparing programs with
+birthmarks.  You must specify target jar file(s) into target selection
+pane.  Next, you must select birthmark types, and push down <compare>
+button.  Then you can see the comparison result of programs by
+selected birthmarks in the new tab pane.
+
+ You can also select comparison method from round robin, guessed
+comparison pair by its name, specified comparison pair, and filtering
+the result of round robin comparison method.
+
+ [[Round robin]] All combination pairs are shown.
+
+ [[Guessed pair]] Guessed pairs by its name.
+
+ [[Specified pair]] Result pairs are specified by user.  You must
+ point name mapping file.
+
+ [[Filtering round robin]] Filtering the result of round robin
+ comparison pairs by certain method.
+
+ []
+
+[images/compare.png] Birthmark comparison procedure
+
+[images/comparisonresult.png] The result of comparison by round robin
+
+[images/comparisonresult2.png] The result of comparison by guessed pair
+
+*{{Analysis}}
+
+ Some analysis methods are implemented.  Typical method is distance
+calculation among classes by their similarities using MDS
+(Multi-Dimensional Scaling).
+
+[images/mdsmapping.png] MDS analysis

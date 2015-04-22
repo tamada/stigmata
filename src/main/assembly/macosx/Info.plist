@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+
+<plist version="1.0">
+  <dict>
+    <key>CFBundleName</key>
+    <string>Stigmata</string>
+    <key>CFBundleVersion</key>
+    <string>2.0.0</string>
+    <key>CFBundleAllowMixedLocalizations</key>
+    <false/>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleExecutable</key>
+    <string>JavaApplicationStub</string>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>Japanese</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleIconFile</key>
+    <string>stigmata.icns</string>
+    <key>Java</key>
+    <dict>
+      <key>MainClass</key>
+      <string>jp.sourceforge.stigmata.Main</string>
+      <key>JVMVersion</key>
+      <string>1.6+</string>
+      <key>ClassPath</key>
+      <array>
+        <string>$JAVAROOT/stigmata-2.0.0.jar</string>
+        <string>$JAVAROOT/commons-cli-1.1.jar</string>
+        <string>$JAVAROOT/commons-dbutils-1.1.jar</string>
+        <string>$JAVAROOT/commons-logging-1.0.3.jar</string>
+        <string>$JAVAROOT/commons-beanutils-1.7.0.jar</string>
+        <string>$JAVAROOT/asm-all-3.1.jar</string>
+        <string>$JAVAROOT/xmlcli-1.2.2.jar</string>
+        <string>$JAVAROOT/mds-1.0.0.jar</string>
+        <string>$JAVAROOT/i18n-1.0.1.jar</string>
+        <string>$JAVAROOT/digger-1.1.0.jar</string>
+      </array>
+      <key>Properties</key>
+      <dict>
+        <!-- application menu name -->
+        <key>com.apple.mrj.application.apple.menu.about.name</key>
+        <string>Stigmata</string>
+        <!-- FileDialog view .pkg, and .app files as file -->
+        <key>com.apple.macos.use-file-dialog-packages</key>
+        <true/>
+        <!-- use macintosh menu bar -->
+        <key>com.apple.macos.useScreenMenuBar</key>
+        <true/>
+        <key>apple.awt.textantialiasing</key>
+        <false/>
+        <key>com.apple.smallTabs</key>
+        <false/>
+        <key>com.apple.mrj.application.live-resize</key>
+        <false/>
+        <key>apple.awt.antialiasing</key>
+        <true/>
+        <key>apple.awt.showGrowBox</key>
+        <true/>
+      </dict>
+    </dict>
+  </dict>
+</plist>

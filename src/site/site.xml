@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="Stigmata">
+  <bannerLeft>
+    <name>Stigmata</name>
+    <href>http://stigmata.sourceforge.jp</href>
+    <src>images/logos/stigmata_logo.png</src>
+    <alt>Stigmata: Java birthmark toolkit</alt>
+  </bannerLeft>
+
+  <poweredBy>
+    <logo name="Powered by ASM"
+          href="http://asm.objectweb.org/"
+          img="images/logos/poweredbyasm.gif"/>
+    <logo name="sourceforge.jp"
+          href="http://sourceforge.jp"
+          img="http://sourceforge.jp/sflogo.php?group_id=2661" />
+    <logo name="Build with Maven 2"
+          href="http://maven.apache.org"
+          img="images/logos/maven-feather.png"/>
+  </poweredBy>
+
+  <body>
+    <links>
+      <item name="jbirth 1.x" href="http://se.naist.jp/jbirth/" />
+      <item name="Stigmata (jbirth 2.x)" href="http://stigmata.sourceforge.jp/" />
+      <item name="Digger" href="http://stigmata.sourceforge.jp/digger/" />
+      <item name="Stigmata Plugins" href="http://stigmata.sourceforge.jp/plugins/" />
+    </links>
+
+    <menu name="Stigmata">
+      <item name="Introduction"        href="index.html"/>
+      <item name="Download"            href="download.html" />
+      <item name="License"             href="license.html"/>
+      <item name="FAQ"                 href="faq.html"/>
+    </menu>
+
+    <menu name="For Users">
+      <item name="Tutorial"            href="tutorial.html"/>
+      <item name="Tutorial (pdf)"      href="tutorial.pdf"/>
+    </menu>
+
+    <menu name="For Developers">
+      <item name="Extend Stigmata"     href="developer.html" />
+      <item name="Relax NG"            href="relaxng.html" />
+      <item name="DTD"                 href="dtd.html" />
+      <item name="Implementation"      href="implementation.html"/>
+      <item name="Experimental mode"   href="experimental.html"/>
+    </menu>
+
+    <menu name="For Researchers">
+      <item name="Definition"          href="definition.html" />
+      <item name="Survey"              href="survey.html"/>
+    </menu>
+
+    <menu name="Links">
+      <item name="Project Page"   href="http://sourceforge.jp/projects/stigmata/"/>
+      <item name="Talisman"       href="http://talisman.sourceforge.jp/"/>
+      <item name="DonQuixote"     href="http://donquixote.cafebabe.jp/" />
+    </menu>
+
+    ${reports}
+  </body>
+</project>

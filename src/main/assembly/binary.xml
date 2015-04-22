@@ -1,0 +1,37 @@
+<assembly>
+  <id>bin</id>
+  <formats>
+    <format>tar.gz</format>
+    <format>tar.bz2</format>
+    <format>zip</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <directory>target</directory>
+      <outputDirectory>lib/</outputDirectory>
+      <includes>
+        <include>*.jar</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>src/bin</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+        <include>stigmata.sh</include>
+        <include>stigmata.bat</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <files>
+    <file>
+      <source>README.txt</source>
+      <outputDirectory>/</outputDirectory>
+      <filtered>true</filtered>
+    </file>
+    <file>
+      <source>LICENSE.txt</source>
+      <outputDirectory>/</outputDirectory>
+      <filtered>true</filtered>
+    </file>
+  </files>
+</assembly>

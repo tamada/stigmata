@@ -1,0 +1,165 @@
+ ----
+ Survey
+ ----
+ Haruaki Tamada
+ ----
+ 2008-09-11
+ ----
+
+Articles
+
+ * Mari-Len De Guzman, ``'Birthmark' scans software for piracy
+   check,'' COMPUTERWORLD, 29 August 2008,
+   {{{http://www.computerworld.com.au/index.php?id=1493459712&rid=-219}http://www.computerworld.com.au/index.php?id=1493459712&rid=-219}}
+
+ * Mari-Len De Guzman, ``German researchers develop ``Birthmark'' for
+   piracy check,'' IT World Canada, 29 August 2007,
+   {{{http://www.itworldcanada.com/a/News/7ed1b410-7517-4e8a-91c8-f0fae4ea07dc.html}http://www.itworldcanada.com/a/News/7ed1b410-7517-4e8a-91c8-f0fae4ea07dc.html}}.
+
+ * Andreas Zeller, ``A new method to detect software theft,''
+   idw-online, 23 August
+   2007. {{{http://idw-online.de/pages/de/news222661}http://idw-online.de/pages/de/news222661}}.
+
+Related Publications
+
+*Static Birthmark
+
+ * Heewan Park, Seokwoo Choi, Hyun-il Lim, and Taisook Han,
+   ``Detecting Java Theft Based on Static API Trace Birthmark,'' In
+   Proc. of the 3rd International Workshop on Security (IWSEC2008),
+   November 2008. (LNCS)
+
+ * Hyun-il Lim, Heewan Park, Seokwoo Choi, Taisook Han, ``Detecting
+   Theft of Java Applications via a Static Birthmark Based on Weighted
+   Stack Patterns,'' IEICE Transactions on Information and Systems,
+   Vol.E91-D No.9 pp.2323-2332, September 2008.
+
+ * Heewan Park, Seokwoo Choi, Hyun-il Lim, and Taisook Han,
+   ``Detecting Code Theft via a Static Instruction Trace Birthmark for
+   Java Methods,'' In Proc. of the 6th IEEE International Conference on
+   Industrial Informatics (INDIN), July 2008.
+
+ * Heewan Park, Hyun-il Lim, Seokwoo Choi and Taisook Han, ``A Static
+   Java Birthmark Based on Operand Stack Behaviors,'' In Proc. of 2008
+   International Conference on Information Security and Assurance,
+   pp.133-136, April 2008.
+
+ * Seokwoo Choi, Heewan Park, Hyun-il Lim, and Taisook Han, ``A Static
+   Birthmark of Binary Executables Based on API Call Structure,'' In
+   Proc. of the 12th Asian Computing Science Conference (ASIAN), December
+   2007. (LNCS4846)
+
+ * Takeshi Kakimoto, Akito Monden, Yasutaka Kamei, Haruaki Tamada,
+   Masateru Tsunoda, and Ken-ichi Matsumoto, ``Using Software
+   Birthmarks to Identify Similar Classes and Major Functionalities,''
+   In Proc. the 3rd International Workshop on Mining Software
+   Repositories ({{{http://msr.uwaterloo.ca/msr2006/}MSR Mining
+   Challenge 2006}}), pp.171--172, Shanghai, China, May
+   2006.
+
+ * Ginger Myles and Christian Collberg, ``K-gram based software
+   birthmarks,'' In Proc. of the 2005 ACM symposium on Applied
+   computing, 2005.
+
+ * Haruaki Tamada, Masahide Nakamura, Akito Monden, Ken-ichi
+   Matsumoto, ``Java Birthmarks --Detecting the Software Theft--,''
+   IEICE Transactions on Information and Systems, Vol. E88-D, No. 9,
+   pp. 2148--2158, September 2005.
+
+ * Masateru Tsunoda, Takeshi Kakimoto, Naoki Ohsugi, Akito Monden, and
+   Ken-ichi Matsumoto, ``Javawock: A Java Class Recommender System
+   Based on Collaborative Filtering,'' In Proc. of 17th International
+   Conference on Software Engineering and Knowledge Engineering
+   ({{{http://www.ksi.edu/seke/seke05.html}SEKE2005}}), pp.491-497,
+   July 2005. (Taipei, Taiwan)
+
+ * Haruaki Tamada, Masahide Nakamura, Akito Monden, and Ken-ichi
+   Matsumoto, ``Design and evaluation of birthmarks for detecting theft
+   of Java programs,'' Proc. IASTED International Conference on
+   Software Engineering
+   ({{{http://www.iasted.org/conferences/2004/Innsbruck/se.htm}IASTED
+   SE 2004}}), pp.569-575, Innsbruck,
+   Austria, 17-19 February 2004.
+
+ * Haruaki Tamada, Masahide Nakamura, Akito Monden, and Ken-ichi
+   Matsumoto, ``Detecting the theft of programs using birthmarks,''
+   Information Science Technical Report, NAIST-IS-TR2003014, ISSN
+   0919-9527, Graduate School of Information Science, Nara Institute
+   of Science and Technology, November 2003.
+
+ * 玉田 春昭, 神崎 雄一郎, 中村 匡秀, 門田 暁人, 松本 健一, ``Java クラスファイルからプログラム指紋を抽出する方法の提案'', 信学技報 情報セキュリティ研究会, Vol. ISEC2003-29, pp.127--133, July 2003.
+
+*Dynamic Birthmark
+
+ * Patrick P.F. Chan, Lucas C.K. Hui, and S.M. Yiu, ``Dynamic software
+   birthmark for Java based on heap memory analysis,'' In Proc. 12th
+   IFIP TC 6/TC 11 International conference on Communications and
+   multimedia security, ser. CMS'11, pp.94--106, Springer-Verlag, 2011
+   (Berlin, Heidelberg).
+
+ * Patrick P.F. Chan, Lucas C.K. Hui, and S.M. Yiu, ``Jsbirth: Dynamic
+   javascript birthmark based on the run-time heap,'' In
+   Proc. Computer Software and Applications Conference (COMPSAC), 2011
+   IEEE 35th Annual, pp.407--412, July 2011.
+
+ * X. Wang, Y.C. Jhi, S. Zhu, and P. Liu, ``Behavior based software
+   theft detection,'' In Proc. the 16th ACM conference on Computer and
+   communications security, ser. CCS '09. pp.280--290, 2009. (New
+   York, NY, USA).
+
+ * David Schuler, Valentin Dallmeier, and Christian Lindig, ``A
+   Dynamic Birthmark for Java,'' In Proc. the 22nd IEEE/ACM
+   International Conference on Automated Software Engineering,
+   (ASE2007), Atlanta, Georgia, USA, November 2007.
+
+ * Bin Lu, Fenlin Liu, Xin Ge, Bin Liu, Xiangyang Luo, ``A Software
+   Birthmark Based on Dynamic Opcode n-gram,'' Proc. International
+   Conference on Semantic Computing (ICSC 2007), pp.37-44, September
+   2007.
+
+ * Haruaki Tamada, Keiji Okamoto, Masahide Nakamura, Akito Monden and
+   Ken-ichi Matsumoto, ``Design and Evaluation of Dynamic Software
+   Birthmarks Based on API Calls'', Information Science Technical
+   Report, NAIST-IS-TR2007011, ISSN 0919-9527, Graduate School of
+   Information Science, Nara Institute of Science and Technology, May
+   2007.
+
+ * 林 晃一郎, 楓 基靖, 真野 芳久, ``特徴抽出と抽象化による動的バースマークの構成とその検証'', 情報処理学会論文誌 (Transactions of Information Processing Society of Japan), Vol.48, No.4 pp. 1799-1808, April 2007.
+
+ * 森山 修, 古江 岳大, 遠山 毅, 松本 勉, ``API関数呼出履歴によるソフトウェア動的バースマークの一方式'', 信学技報, vol. 106, no. 235, ISEC2006-82, pp. 77-84, September 2006.
+
+ * 岡本 圭司, 玉田 春昭, 中村 匡秀, 門田 暁人, 松本 健一, ``API呼び出しを用いた動的バースマーク'', 電子情報通信学会論文誌, Vol.J89-D, No.8, pp.1751-1763, August 2006.
+
+ * David Schuler and Valentin Dallmeier, ``Detecting Software Theft
+   with API Call Sequence Sets,'' Workshops Software Reengineering
+   (WSR 2006), pp.56-57, May 2006.
+
+ * 古田 壮宏, 真野 芳久, ``実行系列の抽象表現を利用した動的バースマーク'', 電子情報通信学会論文誌 Vol.J88-D1, No.10, pp.1595--1599, October 2005.
+
+ * 岡本 圭司, 玉田 春昭, 中村 匡秀, 門田 暁人, 松本 健一, ``ソフトウェア実行時のAPI呼び出し履歴に基づく動的バースマークの実験的評価'', 第46回プログラミング・シンポジウム報告集, pp. 41--50, January 2005
+ * 岡本 圭司, 玉田 春昭, 中村 匡秀, 門田 暁人, 松本 健一, ``ソフトウェア実行時のAPI呼び出し履歴に基づく動的バースマークの提案'', ソフトウェア工学の基礎XI, 日本ソフトウェア科学会 FOSE2004 (FOSE2004), pp.85--88, November 2004. 
+
+ * Haruaki Tamada, Keiji Okamoto, Masahide Nakamura, Akito Monden, and
+   Ken-ichi Matsumoto, ``Dynamic Software Birthmarks to Detect the
+   Theft of Windows Applications,'' In Proc. International Symposium
+   on Future Software Technology 2004 (ISFST 2004), CD-ROM, Xi'an,
+   China, 20-22 October 2004.
+
+ * Ginger Myles and Christian Collberg, ``Detecting Software Theft via
+   Whole Program Path Birthmarks,'' In Proc. Information Security
+   Conference, September 27-29, 2004.
+
+
+*Other Birthmark
+
+ * Xiaoming Zhou, Xingming Sun, Guang Sun and Ying Yang, ``A Combined
+   Static and Dynamic Software Birthmark Based on Component Dependence
+   Graph,'' Proc. 2008 International Conference on Intelligent
+   Information Hiding and Multimedia Signal Processing, iih-msp,
+   pp.1416--1421, August 2008.
+
+ * Jianlong Yang, Jianmin Wang, Deyi Li, ``Detecting the Theft of
+   Natural Language Text Using Birthmark,''
+   International Conference on Intelligent Information Hiding and
+   Multimedia, iih-msp, pp. 699-702, 2006
+

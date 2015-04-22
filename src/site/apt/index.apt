@@ -1,0 +1,100 @@
+ ----
+ Java birthmark toolkit
+ ----
+ Haruaki Tamada
+ ----
+ 2007-07-08
+ ----
+
+Overview
+
+ Stigmata is rewrite almost every source code based on <<<jbirth>>>
+which available at {{http://se.naist.jp/jbirth}}.  Stigmata aims to
+detect the theft of programs, too.  This tool can extract birthmarks
+from Java class files, and compare them.  Differences from
+<<<jbirth>>> are
+
+ * using spi (service provider interface) architecture for birthmark implementation
+
+ * using {{{http://asm.objectweb.org/}ASM}} instead of {{{http://jakarta.apache.org}BCEL}}.
+
+ * introducing birthmarking context
+
+ * implementing new birthmarks (k-gram, frequency of used classes, frequency of method calls)
+
+ * new analysis method for extracted birthmarks
+
+ * show extracted birthmark histories.
+
+ []
+
+ A <software birthmark> is a set of special informations that the
+program originally possesses.  The software birthmark is carefully
+extracted from critical portions of class file. Hence, if a class file
+<p> has the same software birthmark as another class file <q>'s, <q>
+is very likely to be a copy of <p>. Thus, the software birthmark can
+be used as a simple but powerful signature to distinguish doubtful
+class files (those which seem to be copies).
+
+Features
+
+ <<<Stigmata>>> support the extracting birthmarks from Java class
+files, and written in Java 5 with ASM.
+
+ The main features are:
+
+ * extraction of the four types of birthmarks directly from Java class files (without source code),
+
+ * pairwise birthmark comparison of Java class files,
+
+ * Jar file and War file support,
+
+ * plug-in architecture for new birthmarks,
+
+ * analysis of extracted birthmarks (MDS), and
+
+ * show back extracted birthmark histories
+
+Related Tools
+
+*Watermarking Tools
+
+ *{{{http://www.cs.arizona.edu/sandmark/}SandMark: A Tool for the Study of Software Protection Algorithms}}
+
+ *{{{http://se.naist.jp/jmark/}jmark: A lightweight tool for watermarking Java class files}}
+
+*Obfuscator
+
+ *{{{http://www.codingart.com/codeshield.html}CodeShield: A command line byte code obfuscator that works with your build environment}}
+
+ *{{{http://www.condensity.com/}Condensity v.2.0 is the latest and most powerful version of our world-class Java obfuscation utility.}}
+
+ *{{{http://www.preemptive.com/products/dasho/index.html}DashO - the Premier Java Obfuscator and Efficiency Enhancing Tool}}
+
+ *{{{http://www.duckware.com/jobfuscate/}Jobfuscate}}
+
+ *{{{http://www.jproof.com/}JProof}}
+
+ *{{{http://www.e-t.com/jshrink.html}JShrink}}
+
+ *{{{http://www.drjava.de/obfuscator/}Marvin Obfuscator}}
+
+ *{{{http://proguard.sourceforge.net/}ProGuard}}
+
+ *{{{http://www.retrologic.com/retroguard-main.html}RetroGuard - Java Bytecode Obfuscation}}
+
+ *{{{http://www.leesw.com/smokescreen/index.html}Smokescreen Java Class File Obfuscator}}
+
+ *{{{http://www.yworks.com/en/products_yguard_about.htm}yGuard Java Bytecode Obfuscator}}
+
+ *{{{http://www.zelix.com/klassmaster/}Zelix KlassMaster: The Second Generation Java Obfuscator}}
+
+ *{{{http://donquixote.cafebabe.jp}DonQuixote}}
+
+Contact
+
+ Contact us by emal \<tama3[ at ]users.sourceforge.jp\>
+
+ *{{{http://sourceforge.jp/developer/sendmessage.php?touser=587}Email sending form}}
+
+[]

@@ -1,0 +1,114 @@
+ ----
+ For developers
+ ----
+ Haruaki Tamada
+ ----
+ 2007-10-26
+ ----
+
+Overview
+
+ Stigmata introduces plug-in architecture for extracting/comparing
+birthmarks.  Therefore, we can easy to install a new birthmark without
+compilation and re-build application.
+
+ Extend points of Stigmata is as follows.  Each points has service
+provider interface (SPI).
+
+ * extract birthmark (BirthmarkExtractorSpi)
+
+ * compare birthmarks (BirthmarkComparatorSpi)
+
+ * birthmark (extract/compare) (BirthmarkSpi)
+
+ * filter comparison result (ComparisonPairFilterSpi)
+
+ * history of extracted birthmarks (ExtractedBirthmarkSpi)
+
+ * print result (ResultPrinterSpi)
+
+ []
+
+ We can implement a one or more of above spi as services in Java
+source files.  Next, we archive class files which is compiled them
+into a jar file.  Then, we put the jar file to the <<<plugins>>>
+directory in stigmata home directory.  Finally, we restart
+application, new services will be shown.
+
+Class Diagrams
+
+*Birthmark
+
+[images/classdiagram_birthmark.png] birthmark
+
+ <<<BirthmarkSet>>> object represents a set of birthmarks extracted
+from a target. The target is usually class file, however, is accepted
+package, and archive (jar file).  <<<Birthmark>>> interface represents
+a birthmark and includes a set of <<<BirthmarkElement>>>.
+
+**Example
+
+----
+BirthmarkSet birthmarkSet = <extracts IS and UC birthmark from TARGET>
+String name = birthmarkSet.getName();                    // -> <<<TARGET>>>
+int count = birthmarkSet.getBirthmarkCount();            // -> 2
+URL location = birthmarkSet.getLocation();               // -> <location of TARGET>
+String[] types = birthmarkSet.getBirthmarkTypes();       // -> array of [ IS, UC ]
+Birthmark isBirthmark = birthmarkSet.getBirthmark("IS");
+int isCount = isBirthmark.getElementCount();             // -> element count of is birthmark
+Iterator<BirthmarkElement> isIterator = isBirthmark.iterator();
+
+Birthmark ucBirthmark = birthmarkSet.getBirthmark("UC");
+int ucCount = ucBirthmark.getElementCount();             // -> element count of uc birthmark
+Iterator<BirthmarkElement> ucIterator = ucBirthmark.iterator();
+----
+
+*Extraction of Birthmarks
+
+[images/classdiagram_extraction_birthmark.png] extraction of birthmark
+
+ <<<ExtractionResultSet>>> object represents extracted birthmarks from
+targets, and has multiple <<<BirthmarkSet>>> which is extracted each
+targets.  <<<BirthmarkSet>>> has one or more <<<Birthmark>>> object.
+<<<Birthmark>>> object is constructed by <<<BirthmarkExtractor>>>
+object.
+
+ <<<BirthmarkContext>>> means a runtime context and contains
+<<<ExtractionUnit>>> and <<<BirthmarkStoreTarget>>>.
+<<<ExtractionUnit>>> means unit of target.  If <<<ExtractionUnit>>>
+object in <<<BirthmarkContext>>> is <CLASS>, then <<<BirthmarkSet>>>
+is constructed by each classes.  Also, <<<ExtractionUnit>>> is
+<ARCHIVE>, then <<<BirthmarkSet>>> is constructed by each jar files.
+
+*Comparison of Birthmarks
+
+[images/classdiagram_comparison_birthmark.png] extraction of birthmark
+
+ <<<ComparisonResultSet>>> object represents birthmark comparison
+result, and has multiple <<<ComparisonPair>>> objects which are
+comparing object between two <<<BirthmarkSet>>> objects.  Then,
+<<<ComparisonPairElement>>> object represents comparing between two
+<<<Birthmark>>> objects, and this is managed by <<<ComparisonPair>>>
+objects.  <<<BirthmarkComparator>>> represents a comparing algorithm
+of <<<Birthmark>>>s.  Finally, <<<ComparisonMethod>>> means how to
+compare multiple <<<BirthmarkSet>>>s.
+
+*Filtering Comparison Result Set of Birthmarks
+
+[images/classdiagram_filtering_birthmark.png] Filtering ComparisonResultSet
+
+ <<<FilteredComparisonResultSet>>> object is a concrete class of
+<<<ComparisonResultSet>>> and filtering result sequence.  Filtering is
+operated based on multiple filter sets
+(<<<ComparisonPairFilterSet>>>).  A filter set includes multiple
+<<<ComparisonPairFilter>>>.  Examples of <<<ComparisonPairFilter>>>
+are <<<TargetNameComparisonPairFilter>>>,
+<<<BirthmarkElementCountComparisonPairFilter>>>, and
+<<<SimilarityComparisonPairFilter>>>.  Each filters has
+<<<Criterion>>> object which is filter criterion.
+
+*Services
+
+[images/classdiagram_services.png] Filtering ComparisonResultSet
+
+
