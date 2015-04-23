@@ -33,6 +33,7 @@ public class UsedClassesBirthmarkExtractVisitor extends BirthmarkExtractVisitor{
         for(String i: interfaces){
             addUCElement(i);
         }
+        super.visit(version, access, name, signature, superName, interfaces);
     }
 
     @Override
@@ -43,7 +44,7 @@ public class UsedClassesBirthmarkExtractVisitor extends BirthmarkExtractVisitor{
         addDescriptor(desc);
         addSignatureClass(signature);
 
-        return visitor;
+        return super.visitField(access, name, desc, signature, value);
     }
 
     @Override
