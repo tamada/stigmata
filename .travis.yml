@@ -1,0 +1,8 @@
+language: java
+
+after_success:
+  - mvn clean
+
+env:
+  global:
+    secure: "InckRCZK0KYdXmwU3zos9XUZWV4wKxeDrNUvgjmJrK3seytjA360azlxc5nv4bryNVzJIw/5WEJl6l+22fXnytRMjzjdSs1hmPsp0rV5GQ+/VeZ0aO7eMozDwpMd/GFPSc2BiYQNF7/bnDWVtsi1CJmQe20WEDgdExI3MCStRtE="
