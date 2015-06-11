@@ -91,7 +91,7 @@
     </dependency>
     <dependency>
       <groupId>org.ow2.asm</groupId>
-      <artifactId>asm-debug-all</artifactId>
+      <artifactId>asm-all</artifactId>
       <version>5.0.3</version>
       <scope>compile</scope>
     </dependency>
@@ -104,16 +104,6 @@
   </dependencies>
 
   <build>
-    <resources>
-      <resource>
-        <directory>${basedir}</directory>
-        <includes>
-          <include>LICENSE.txt</include>
-        </includes>
-        <targetPath>META-INF/tamada</targetPath>
-      </resource>
-    </resources>
-
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
