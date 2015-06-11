@@ -1,5 +1,7 @@
 # Stigmata: Java birthmark toolkit
 
+[![Build Status](https://travis-ci.org/tamada/stigmata.svg?branch=master)](https://travis-ci.org/tamada/stigmata) [![Coverage Status](https://coveralls.io/repos/tamada/stigmata/badge.svg)](https://coveralls.io/r/tamada/stigmata)
+
 ## Overview
 
 Stigmata is the Java birthmark toolkit, which aims to detect the theft

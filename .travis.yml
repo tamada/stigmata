@@ -1,7 +1,7 @@
 language: java
 
 after_success:
-  - mvn clean package jacoco:report coveralls:report
+  - mvn -DrepoToken=${COVERALLS_TOKEN} package jacoco:report coveralls:report
 
 env:
   global:
