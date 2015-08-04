@@ -113,7 +113,7 @@ public final class Main{
             context.setFormat(cl.getOptionValue("format"));
         }
         else{
-            context.setFormat("xml");
+            context.setFormat("csv");
         }
 
         addClasspath(env.getClasspathContext(), cl);
