@@ -104,6 +104,7 @@ public class ReflectedBirthmarkService extends AbstractBirthmarkService implemen
         return true;
     }
 
+    @Override
     public String toString(){
         return String.format("%s, extractor=%s, comparator=%s", getType(), extractorClass, comparatorClass);
     }

@@ -25,14 +25,14 @@ public class InheritanceStructureBirthmarkExtractVisitor extends BirthmarkExtrac
     }
 
     @Override
-    public void visit(int version, int access, String name, String signature,
-                      String superName, String[] interfaces){
+    public void visit(int version, int access, String nameInClassFormat, String signature,
+                      String superNameInClassFormat, String[] interfaces){
         if((access & Opcodes.ACC_INTERFACE) != Opcodes.ACC_INTERFACE){
             ClasspathContext context = getEnvironment().getClasspathContext();
-            name = name.replace('/', '.');
+            String name = nameInClassFormat.replace('/', '.');
             ClassFileEntry entry = context.findEntry(name);
             if(entry == null){
-                superName = superName.replace('/', '.');
+                String superName = superNameInClassFormat.replace('/', '.');
                 ClassFileEntry parent = context.findEntry(superName);
                 if(parent != null){
                     addIsBirthmark(name);
@@ -44,7 +44,7 @@ public class InheritanceStructureBirthmarkExtractVisitor extends BirthmarkExtrac
             }
             else{
                 try{
-                    Class<?> clazz = context.findClass(name);
+                    Class<?> clazz = context.findClass(nameInClassFormat);
                     addISBirthmark(clazz);
                 } catch(ClassNotFoundException e){
                     addFailur(e);
@@ -66,6 +66,7 @@ public class InheritanceStructureBirthmarkExtractVisitor extends BirthmarkExtrac
     }
 
     private void addISBirthmark(Class<?> c){
+        Class<?> targetClass = c;
         WellknownClassManager wcm = getEnvironment().getWellknownClassManager();
         do{
             String className = c.getName();
@@ -78,8 +79,8 @@ public class InheritanceStructureBirthmarkExtractVisitor extends BirthmarkExtrac
             }
 
             addElement(element);
-            c = c.getSuperclass();
-        } while(!c.getName().equals("java.lang.Object"));
+            targetClass = targetClass.getSuperclass();
+        } while(!(c instanceof Object));
         addElement(new BirthmarkElement("java.lang.Object"));
     }
 }

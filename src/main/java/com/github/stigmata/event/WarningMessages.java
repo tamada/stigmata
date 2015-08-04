@@ -1,5 +1,6 @@
 package com.github.stigmata.event;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -8,7 +9,9 @@ import java.util.Map;
  * 
  * @author Haruaki Tamada
  */
-public class WarningMessages{
+public class WarningMessages implements Serializable{
+    private static final long serialVersionUID = 3185770266803934201L;
+
     private OperationType type;
     private Map<Exception, String> messages = new HashMap<Exception, String>();
 

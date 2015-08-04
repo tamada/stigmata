@@ -6,14 +6,15 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Stack;
 
 import com.github.stigmata.digger.ClassFileArchive;
 import com.github.stigmata.digger.ClassFileEntry;
@@ -44,7 +45,7 @@ import com.github.stigmata.spi.BirthmarkService;
 public class BirthmarkEngine{
     private BirthmarkEnvironment environment;
     private List<BirthmarkEngineListener> listeners = new ArrayList<BirthmarkEngineListener>();
-    private Stack<WarningMessages> stack = new Stack<WarningMessages>();
+    private Deque<WarningMessages> stack = new ArrayDeque<WarningMessages>();
     private WarningMessages warnings;
     private OperationType latestOperationType;
     private OperationType targetType;

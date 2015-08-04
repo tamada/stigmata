@@ -39,7 +39,7 @@ public class UsedClassesBirthmarkExtractVisitor extends BirthmarkExtractVisitor{
     @Override
     public FieldVisitor visitField(int access, String name, String desc,
             String signature, Object value){
-        FieldVisitor visitor = super.visitField(access, name, desc, signature, value);
+        super.visitField(access, name, desc, signature, value);
 
         addDescriptor(desc);
         addSignatureClass(signature);
