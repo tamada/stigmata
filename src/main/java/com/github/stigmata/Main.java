@@ -75,12 +75,13 @@ public final class Main{
      * @param args
      */
     private String[] shiftArray(String[] args){
+        String[] returnValues = args;
         if(args.length > 0){
             String[] arguments = new String[args.length - 1];
             System.arraycopy(args, 1, arguments, 0, arguments.length);
-            args = arguments;
+            returnValues = arguments;
         }
-        return args;
+        return returnValues;
     }
 
     private void updateContext(BirthmarkContext context, CommandLinePlus cl){
@@ -134,16 +135,17 @@ public final class Main{
 
     private void addClasspath(ClasspathContext context, CommandLinePlus commandLine){
         String[] classpath = commandLine.getOptionValues("classpath");
+        if(classpath == null){
+            return;
+        }
 
-        if(classpath != null){
-            for(String cp: classpath){
-                try{
-                    File f = new File(cp);
-                    if(f.exists()){
-                        context.addClasspath(f.toURI().toURL());
-                    }
-                }catch(MalformedURLException ex){
+        for(String cp: classpath){
+            try{
+                File f = new File(cp);
+                if(f.exists()){
+                    context.addClasspath(f.toURI().toURL());
                 }
+            }catch(MalformedURLException ex){                
             }
         }
     }
@@ -153,9 +155,8 @@ public final class Main{
             OptionsBuilderFactory factory = OptionsBuilderFactory.getInstance();
             URL location = getClass().getResource("/resources/options.xml");
             OptionsBuilder builder = factory.createBuilder(location);
-            Options options = builder.buildOptions();
 
-            return options;
+            return builder.buildOptions();
         }catch(XmlCliConfigurationException ex){
             ex.printStackTrace();
         }catch(DOMException ex){

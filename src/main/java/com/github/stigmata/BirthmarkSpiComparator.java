@@ -34,10 +34,6 @@ class BirthmarkSpiComparator implements Comparator<BirthmarkService>{
 
     @Override
     public boolean equals(Object o){
-        String className = null;
-        if(o != null){
-            className = o.getClass().getName();
-        }
-        return o != null && className.equals(getClass().getName());
+        return o != null && o instanceof BirthmarkService;
     }
 }

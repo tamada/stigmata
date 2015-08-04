@@ -1,5 +1,6 @@
 package com.github.stigmata.birthmarks.kgram;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -21,7 +22,7 @@ public class KGramBuilder{
     }
 
     @SuppressWarnings("unchecked")
-    public <T> KGram<T>[] buildKGram(T[] values, int kvalue){
+    public <T extends Serializable> KGram<T>[] buildKGram(T[] values, int kvalue){
         Set<KGram<T>> kgrams = new LinkedHashSet<KGram<T>>();
 
         if(values.length >= kvalue){
@@ -38,7 +39,7 @@ public class KGramBuilder{
     }
 
     @SuppressWarnings("unchecked")
-    public <T> KGram<T>[] buildKGram(List<T> values, int kvalue){
+    public <T extends Serializable> KGram<T>[] buildKGram(List<T> values, int kvalue){
         Set<KGram<T>> kgrams = new LinkedHashSet<KGram<T>>();
 
         if(values.size() >= kvalue){

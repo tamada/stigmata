@@ -112,7 +112,7 @@ public class BirthmarkEnvironment{
         return DEFAULT_ENVIRONMENT;
     }
 
-    public static synchronized final String getStigmataHome(){
+    public static final synchronized String getStigmataHome(){
         return stigmataHome.getStigmataHome();
     }
 
@@ -137,13 +137,24 @@ public class BirthmarkEnvironment{
      * add given property.
      */
     public void addProperty(String key, String value){
-        boolean contains = properties.containsKey(key);
         String old = getProperty(key);
         properties.put(key, value);
 
-        // value is updated?
-        if(!((old != null && old.equals(value)) ||
-             (contains && old == null && value == null))){
+        boolean fireFlag = false;
+        if(old == null && value != null){
+            fireFlag = true;
+        }
+        else if(old != null && value == null){
+            fireFlag = true;
+        }
+        else if((old != null && value != null) && !old.equals(value)){
+            fireFlag = true;
+        }
+        else if(properties.containsKey(key) && old == null && value == null){
+            fireFlag = true;
+        }
+
+        if(fireFlag){
             firePropertyEvent(new PropertyChangeEvent(this, key, old, value));
         }
     }

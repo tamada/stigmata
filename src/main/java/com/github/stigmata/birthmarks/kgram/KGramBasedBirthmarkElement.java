@@ -1,12 +1,14 @@
 package com.github.stigmata.birthmarks.kgram;
 
+import java.io.Serializable;
+
 import com.github.stigmata.BirthmarkElement;
 
 /**
  * 
  * @author Haruaki TAMADA
  */
-public class KGramBasedBirthmarkElement<T> extends BirthmarkElement{
+public class KGramBasedBirthmarkElement<T extends Serializable> extends BirthmarkElement{
     private static final long serialVersionUID = 28546543857543634L;
 
     private KGram<T> kgram;

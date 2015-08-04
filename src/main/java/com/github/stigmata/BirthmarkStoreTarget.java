@@ -15,10 +15,10 @@ public class BirthmarkStoreTarget implements Serializable, Comparable<BirthmarkS
 
     private static final Map<String, BirthmarkStoreTarget> TARGETS = new HashMap<String, BirthmarkStoreTarget>();
 
-    public static BirthmarkStoreTarget MEMORY = new BirthmarkStoreTarget(0, "MEMORY");
-    public static BirthmarkStoreTarget XMLFILE = new BirthmarkStoreTarget(1, "XMLFILE");
-    public static BirthmarkStoreTarget MEMORY_SINGLE = new BirthmarkStoreTarget(2, "MEMORY_SINGLE");
-    public static BirthmarkStoreTarget RDB = new BirthmarkStoreTarget(3, "RDB");
+    public static final BirthmarkStoreTarget MEMORY = new BirthmarkStoreTarget(0, "MEMORY");
+    public static final BirthmarkStoreTarget XMLFILE = new BirthmarkStoreTarget(1, "XMLFILE");
+    public static final BirthmarkStoreTarget MEMORY_SINGLE = new BirthmarkStoreTarget(2, "MEMORY_SINGLE");
+    public static final BirthmarkStoreTarget RDB = new BirthmarkStoreTarget(3, "RDB");
 
     private final String name;
     private final int ordinal;
@@ -35,6 +35,11 @@ public class BirthmarkStoreTarget implements Serializable, Comparable<BirthmarkS
 
     public int ordinal(){
         return ordinal;
+    }
+
+    @Override
+    public int hashCode(){
+        return super.hashCode();
     }
 
     @Override

@@ -14,7 +14,7 @@ public class FrequencyBirthmarkElement extends BirthmarkElement implements Value
     public FrequencyBirthmarkElement(String value){
         super(parseValue(value));
         if(!value.equals(super.getValue())){
-            int number = new Integer(value.substring(0, value.indexOf(":")));
+            int number = Integer.parseInt(value.substring(0, value.indexOf(":")));
             this.count = number;
         }
     }
@@ -70,14 +70,9 @@ public class FrequencyBirthmarkElement extends BirthmarkElement implements Value
     private static String parseValue(String value){
         if(value.indexOf(":") > 0){
             int index = value.indexOf(":");
-            String num = value.substring(0, index);
             String val = value.substring(index + 1);
-            try{
-                // is number?
-                new Integer(num);
-                return val.trim();
-            } catch(NumberFormatException e){
-            }
+
+            return val.trim();
         }
         return value;
     }

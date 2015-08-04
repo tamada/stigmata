@@ -9,9 +9,9 @@ import java.util.Arrays;
  * 
  * @author Haruaki TAMADA
  */
-public class KGram<T> implements Serializable{
+public class KGram<T extends Serializable> implements Serializable{
     private static final long serialVersionUID = 273465874532523L;
-    // private List<T> list = new ArrayList<T>();
+
     private int maxLength = 4;
     private T[] values;
 
