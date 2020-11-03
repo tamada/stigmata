@@ -1,3 +1,6 @@
+This project has no longer maintenanced.
+Please use [`tamada/pochi`](https://github.com/tamada/pochi) instead of this project.
+
 # Stigmata: Java birthmark toolkit
 
 [![Build Status](https://travis-ci.org/tamada/stigmata.svg?branch=master)](https://travis-ci.org/tamada/stigmata) [![Coverage Status](https://coveralls.io/repos/tamada/stigmata/badge.svg)](https://coveralls.io/r/tamada/stigmata)
