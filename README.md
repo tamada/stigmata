@@ -1,3 +1,5 @@
+# :no_entry_sign: Notice!! 
+
 This project has no longer maintenanced.
 Please use [`tamada/pochi`](https://github.com/tamada/pochi) instead of this project.
 
